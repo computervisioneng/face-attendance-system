@@ -1,10 +1,11 @@
 import os.path
 import datetime
-import subprocess
+import pickle
 
 import tkinter as tk
 import cv2
 from PIL import Image, ImageTk
+import face_recognition
 
 import util
 
@@ -52,12 +53,8 @@ class App:
         self._label.after(20, self.process_webcam)
 
     def login(self):
-        unknown_img_path = './.tmp.jpg'
 
-        cv2.imwrite(unknown_img_path, self.most_recent_capture_arr)
-
-        output = str(subprocess.check_output(['face_recognition', self.db_dir, unknown_img_path]))
-        name = output.split(',')[1][:-3]
+        name = util.recognize(self.most_recent_capture_arr, self.db_dir)
 
         if name in ['unknown_person', 'no_persons_found']:
             util.msg_box('Ups...', 'Unknown user. Please register new user or try again.')
@@ -66,8 +63,6 @@ class App:
             with open(self.log_path, 'a') as f:
                 f.write('{},{}\n'.format(name, datetime.datetime.now()))
                 f.close()
-
-        os.remove(unknown_img_path)
 
     def register_new_user(self):
         self.register_new_user_window = tk.Toplevel(self.main_window)
@@ -106,7 +101,10 @@ class App:
     def accept_register_new_user(self):
         name = self.entry_text_register_new_user.get(1.0, "end-1c")
 
-        cv2.imwrite(os.path.join(self.db_dir, '{}.jpg'.format(name)), self.register_new_user_capture)
+        embeddings = face_recognition.face_encodings(self.register_new_user_capture)[0]
+
+        file = open(os.path.join(self.db_dir, '{}.pickle'.format(name)), 'wb')
+        pickle.dump(embeddings, file)
 
         util.msg_box('Success!', 'User was registered successfully !')
 
