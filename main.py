@@ -16,7 +16,10 @@ class App:
         self.main_window.geometry("1200x520+350+100")
 
         self.login_button_main_window = util.get_button(self.main_window, 'login', 'green', self.login)
-        self.login_button_main_window.place(x=750, y=300)
+        self.login_button_main_window.place(x=750, y=200)
+
+        self.logout_button_main_window = util.get_button(self.main_window, 'logout', 'red', self.logout)
+        self.logout_button_main_window.place(x=750, y=300)
 
         self.register_new_user_button_main_window = util.get_button(self.main_window, 'register new user', 'gray',
                                                                     self.register_new_user, fg='black')
@@ -61,8 +64,21 @@ class App:
         else:
             util.msg_box('Welcome back !', 'Welcome, {}.'.format(name))
             with open(self.log_path, 'a') as f:
-                f.write('{},{}\n'.format(name, datetime.datetime.now()))
+                f.write('{},{},in\n'.format(name, datetime.datetime.now()))
                 f.close()
+
+    def logout(self):
+
+        name = util.recognize(self.most_recent_capture_arr, self.db_dir)
+
+        if name in ['unknown_person', 'no_persons_found']:
+            util.msg_box('Ups...', 'Unknown user. Please register new user or try again.')
+        else:
+            util.msg_box('Welcome back !', 'Welcome, {}.'.format(name))
+            with open(self.log_path, 'a') as f:
+                f.write('{},{},out\n'.format(name, datetime.datetime.now()))
+                f.close()
+
 
     def register_new_user(self):
         self.register_new_user_window = tk.Toplevel(self.main_window)
