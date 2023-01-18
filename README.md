@@ -31,3 +31,12 @@ In Windows, you will need to do a couple of additional steps before starting wit
     pip install -r Silent-Face-Anti-Spoofing/requirements.txt
 
 Remember to add the Silent-Face-Anti-Spoofing directory to your **PYTHONPATH**.
+
+## web app
+
+Face attendance + face recognition web app with React and Python!
+
+[![Watch the video](https://img.youtube.com/vi/yWmW5uEtNws/0.jpg)](https://www.youtube.com/watch?v=yWmW5uEtNws)
+
+The code for this web app project is available [here](https://github.com/computervisiondeveloper/face-attendance-web-app-react-python).
+
