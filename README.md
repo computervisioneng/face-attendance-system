@@ -27,7 +27,7 @@ In Windows, you will need to do a couple of additional steps before starting wit
 
 ## spoofing feature
 
-    git clone https://github.com/computervisiondeveloper/Silent-Face-Anti-Spoofing.git
+    git clone https://github.com/computervisioneng/Silent-Face-Anti-Spoofing.git
     pip install -r Silent-Face-Anti-Spoofing/requirements.txt
 
 Remember to add the Silent-Face-Anti-Spoofing directory to your **PYTHONPATH**.
