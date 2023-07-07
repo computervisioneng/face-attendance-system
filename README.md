@@ -47,7 +47,7 @@ Face attendance + face recognition web app with React and Python!
 
 <p align="center">
 <a href="https://www.youtube.com/watch?v=yWmW5uEtNws">
-    <img width="600" src="https://utils-computervisiondeveloper.s3.amazonaws.com/thumbnails/with_play_button/face_attendance_web_app.jpg" alt="Watch the video">
+    <img width="600" src="https://utils-computervisiondeveloper.s3.amazonaws.com/thumbnails/with_play_button/face_attendance_web_app_react_python.jpg" alt="Watch the video">
     </br>Watch on YouTube: Face attendance + face recognition web app with React and Python !
 </a>
 </p>
