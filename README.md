@@ -51,5 +51,6 @@ Face attendance + face recognition web app with React and Python!
     </br>Watch on YouTube: Face attendance + face recognition web app with React and Python !
 </a>
 </p>
-The code for this web app project is available [here](https://github.com/computervisiondeveloper/face-attendance-web-app-react-python).
+
+The code for this project is available [here](https://github.com/computervisiondeveloper/face-attendance-web-app-react-python).
 
