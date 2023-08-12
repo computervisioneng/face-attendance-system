@@ -27,7 +27,7 @@ Face attendance system using face recognition with Python !
 ### windows
 
 In Windows, you will need to do a couple of additional steps before starting with this tutorial:
-- Follow the instructions described in this video https://www.youtube.com/watch?v=xaDJ5xnc8dc, from the minute 4:39 to 6:07
+- Follow the instructions described in this video https://www.youtube.com/watch?v=oTv7HB6CRpQ
 - Install the packages in requirements_windows.txt.
 
 ### linux, mac
